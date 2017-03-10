@@ -3,9 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    //sdfsdf
-    //
-    //
+    ofSetCircleResolution(100);
 }
 
 //--------------------------------------------------------------
@@ -15,45 +13,25 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-    ofBackground(0);
-    
-    // the letter z is 3 lines
-    // one at the top, one from top right to bottom left
-    // and one at the bottom
     
     
-    float x = 300;
-    float y = 300;
-    float width = 30;
-    float height = 200;
+    ofBackground(0,0,0);    // black
     
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
+    // mouseX and mouseY are variables that we can access that are where the mouse is
+    // we can use them to control points of things:
     
-    // now we can do it again!  change the variables:
+    ofSetColor(255);
     
-    x = 350;
-    y = 300;
-    width = 80;
-    height = 200;
+    ofDrawLine(0,0,mouseX, mouseY);
+    ofDrawLine(800,0, mouseX, mouseY);
+    ofDrawLine(800,800, mouseX, mouseY);
+    ofDrawLine(0,800, mouseX, mouseY);
     
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
+    // we can also use them wherever we have a number:
     
     
-    // one more time:
-    
-    x = 450;
-    y = 300;
-    width = 130;
-    height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
+    ofSetColor(mouseX, mouseY, 0);
+    ofDrawCircle(400,400,30);
     
 
 }

@@ -3,9 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    //sdfsdf
-    //
-    //
 }
 
 //--------------------------------------------------------------
@@ -16,46 +13,30 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    ofBackground(0);
     
-    // the letter z is 3 lines
-    // one at the top, one from top right to bottom left
-    // and one at the bottom
+    // here's a few useful functions in OF that return numbers:
     
-    
-    float x = 300;
-    float y = 300;
-    float width = 30;
-    float height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
-    
-    // now we can do it again!  change the variables:
-    
-    x = 350;
-    y = 300;
-    width = 80;
-    height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
-    
-    
-    // one more time:
-    
-    x = 450;
-    y = 300;
-    width = 130;
-    height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
-    
+    // ofGetWidth()        <--- gets the width of the screen
+    // ofGetHeight()        <--- gets the height of the screen
+    // ofGetElapsedTimef()  <--- get the elapsed time in seconds
 
+    // I really like using sin(ofGetElapsedTimef()) because it goes between -1 and 1 every 6.28 seconds;
+    // you can do stuff like:
+    
+    ofBackground( sin(ofGetElapsedTimef()) * 127 + 127);
+    
+    ofSetColor( sin(ofGetElapsedTimef() + PI) * 127 + 127);
+
+    float w = ofGetWidth();
+    float h = ofGetHeight();
+    float time = ofGetElapsedTimef();
+    
+    // this rectangle will be 33% over in x and y and have a width and height of 33%
+    // of whatever the window is.  Try resizing!
+    
+    ofDrawRectangle( 0 + w*0.33, 0+h*0.33,w*0.33, h*0.33 );
+    
+    
 }
 
 //--------------------------------------------------------------

@@ -3,9 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    //sdfsdf
-    //
-    //
+    ofSetCircleResolution(100);
 }
 
 //--------------------------------------------------------------
@@ -16,46 +14,39 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
+    
     ofBackground(0);
     
-    // the letter z is 3 lines
-    // one at the top, one from top right to bottom left
-    // and one at the bottom
+    // somtimes it's useful to remap a value
+    // from one range into another
+    
+    // ofMap ( input, inputMin, inputMax, outputMin, outputMax)
+    
+    // is a function that does this.
+    // for example:
+    
+    // ofMap(mouseX, 0, ofGetWidth(), 0, 1);
+    
+    // will return a number between 0 and 1 as you move the mouse from right to left
+    // mouseX is a big number (it's in pixels) but if we map it from 0 to the width of the window,
+    // we can remap it 0 - 1
+    
+    float mousePct = ofMap(mouseX, 0, ofGetWidth(), 0, 1);
+    
+    ofSetColor(255);
+    ofDrawCircle(ofGetWidth()/2, ofGetHeight()/2, mousePct * 300);
+    
+    // you'll notice that if you bring your mouse too far on the left, the circle gets big again
+    // this is because we aren't "clamping" the results, and the input
+    // is outside of the input range so the output is also outside of the output range.
+ 
+    //  try ofMap(mouseX, 0, ofGetWidth(), 0, 1, true); above....
+    //  also fun to try is:
+    //  ofSetColor(255*mousePct);
     
     
-    float x = 300;
-    float y = 300;
-    float width = 30;
-    float height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
-    
-    // now we can do it again!  change the variables:
-    
-    x = 350;
-    y = 300;
-    width = 80;
-    height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
     
     
-    // one more time:
-    
-    x = 450;
-    y = 300;
-    width = 130;
-    height = 200;
-    
-    ofDrawLine(x,y, x+width, y);              // the line at the top
-    ofDrawLine(x+width, y, x, y+ height);     // top right to bottom left
-    ofDrawLine(x, y+height, x+width, y+height);   // the line at the bottom
-    
-
 }
 
 //--------------------------------------------------------------
