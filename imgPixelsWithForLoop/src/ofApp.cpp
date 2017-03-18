@@ -29,7 +29,7 @@ void ofApp::draw(){
             //ofDrawRectangle(300 + i, j, 10, 10);
             float brightness = mouseImg.getColor(i, j).getBrightness();
             //cout << brightness << endl;
-            ofDrawCircle(300 + i,j, ofMap(brightness, 0, 255, 3.4, 4.3));
+            ofDrawCircle(300 + i,j, ofMap(brightness, 0, 255, 1, 5));
         }
     }
 }
