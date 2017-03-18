@@ -41,10 +41,10 @@ void ofApp::draw(){
     
 //      ofMap(value, inputMin, inputMax, outputMin, outputMax);
     
-//        for (int i = 0; i < 10; i++){
-//            ofSetColor( ofMap(i, 0, 9, 10, 255) );
-//            ofDrawCircle(400,400,  ofMap(i, 0, 9, mouseX, mouseY));
-//        }
+        for (int i = 0; i < 10; i++){
+            ofSetColor( ofMap(i, 0, 9, 10, 255) );
+            ofDrawCircle(400,400,  ofMap(i, 0, 9, 300, 50));
+        }
 //
     
     
@@ -59,14 +59,14 @@ void ofApp::draw(){
 //        
 //    }
     
-    
-    for (int i = 0; i < 100; i++ ){
-        for (int j = 0; j < 100; j++ ) {
-            
-            ofSetColor(i*2, j*2, mouseX);
-            ofDrawRectangle(i * 5, j * 5, 5,5);
-        }
-    }
+//    
+//    for (int i = 0; i < 100; i++ ){
+//        for (int j = 0; j < 100; j++ ) {
+//            
+//            ofSetColor(i*2, j*2, mouseX);
+//            ofDrawRectangle(i * 5, j * 5, 5,5);
+//        }
+//    }
     
     
     
