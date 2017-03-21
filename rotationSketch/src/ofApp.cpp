@@ -3,15 +3,11 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    ofSetCircleResolution(100);
-    
-    position = 100;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
-    
 }
 
 //--------------------------------------------------------------
@@ -19,19 +15,68 @@ void ofApp::draw(){
 
     ofBackground(0);
     
+    ofSetRectMode(OF_RECTMODE_CENTER);
     
-    position = position + 1;
     
-//    // position = position + ofRandom(-1,1);
-//    
-//    
-    if (position > ofGetWidth()){
-        position = 100;
-    }
-//
-  
+
+    // (a) simple
     
-    ofDrawCircle(position, 400, 50);
+    float x = 300;
+    float y = 300;
+    
+    float diffx = mouseX - x;
+    float diffy = mouseY - y;
+    
+    float angle = atan2(diffy, diffx);  // radians
+    
+    
+    ofPushMatrix();
+    ofTranslate(x, y);
+    ofRotate(angle * RAD_TO_DEG);
+    ofDrawRectangle(0,0, 50, 10);
+    ofPushMatrix();
+
+    
+
+// (b) for loop
+//    for (int i = 0; i < 10; i++){
+//        for (int j = 0; j < 10; j++){
+//            
+//            
+//            float x = i * 50;
+//            float y = j * 50;
+//            
+//            float diffx = mouseX - x;
+//            float diffy = mouseY - y;
+//            
+//            float angle = atan2(diffy, diffx);  // radians
+//            
+//            
+//            ofPushMatrix();
+//            ofTranslate(x, y);
+//            ofRotate(angle * RAD_TO_DEG);
+//            ofDrawRectangle(0,0, 50, 10);
+//            ofPopMatrix();
+//            
+//            
+//            
+//            
+//        }
+//    }
+    
+    
+    // (c) with ofPoint
+    
+//    ofPoint pos(300,300);
+//    ofPoint mouse(mouseX, mouseY);
+//    ofPoint diff = mouse - pos;
+//    float angle = atan2(diff.y, diff.x);
+//    ofPushMatrix();
+//    ofTranslate(pos);
+//    ofRotate(angle * RAD_TO_DEG);
+//    ofDrawRectangle(0,0, 50, 10);
+//    ofPushMatrix();
+    
     
 }
 

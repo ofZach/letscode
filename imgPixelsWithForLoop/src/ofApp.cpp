@@ -25,6 +25,8 @@ void ofApp::draw(){
     
     for (int i = 0; i < 300; i+=10){
         for (int j = 0; j < 300; j+=10){
+            
+            
             //ofSetColor(mouseImg.getColor(i, j));
             //ofDrawRectangle(300 + i, j, 10, 10);
             float brightness = mouseImg.getColor(i, j).getBrightness();

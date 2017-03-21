@@ -23,7 +23,7 @@ void ofApp::draw(){
     
     grabber.draw(0,0);
     
-   ofSetRectMode(OF_RECTMODE_CENTER);
+    ofSetRectMode(OF_RECTMODE_CENTER);
     
     
     for (int i = 0; i < 640; i+=10){

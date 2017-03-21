@@ -17,25 +17,25 @@ void ofApp::draw(){
     ofBackground(0);
     //ofDrawRectangle(100, 100, 600, 600);
     
-//    if (mouseX < ofGetWidth()/2){
-//        if (mouseY < ofGetHeight()/2){
-//            ofDrawRectangle(100, 100, 600, 600);
-//        } else {
-//            ofDrawLine(0,0,800,800);
-//        }
-//        
-//    } else {
-//        ofDrawCircle(400,400,50);
-//    }
-    
-    if (mouseX < ofGetWidth()/3){
-        ofBackground(0);
-    } else if (mouseX >= ofGetWidth()/3 &&
-               mouseX < 2*ofGetWidth()/3){
-        ofBackground(127);
+    if (mouseX < ofGetWidth()/2){
+        if (mouseY < ofGetHeight()/2){
+            ofDrawRectangle(100, 100, 600, 600);
+        } else {
+            ofDrawLine(0,0,800,800);
+        }
     } else {
-        ofBackground(255);
+        ofDrawCircle(400,400,50);
     }
+    
+    
+//    if (mouseX < ofGetWidth()/3){
+//        ofBackground(0);
+//    } else if (mouseX >= ofGetWidth()/3 &&
+//               mouseX < 2*ofGetWidth()/3){
+//        ofBackground(127);
+//    } else {
+//        ofBackground(255);
+//    }
     
     
 }
