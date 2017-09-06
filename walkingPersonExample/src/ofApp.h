@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "dataPlayer.h"
 
 
 
@@ -23,13 +24,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-        //---------------------------------------------------
-        // zach's stuff
-        ofEasyCam cam;
-        ofPoint frames[30][24];         // 30 frames, 24 points per frame
-        ofPoint frames2d[30][24];         // 30 frames, 24 points per frame
-        //---------------------------------------------------
+    dataPlayer DP;
     
-        //
     
 };
